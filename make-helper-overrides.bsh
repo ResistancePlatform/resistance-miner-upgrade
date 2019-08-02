@@ -1,0 +1,15 @@
+#!/bin/bash
+
+## Copyright (C) 2019 - 2019 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+## Upstream not using copyright years in COPYING file so debian/copyright
+## cannot fix that either.
+genmkfile_lintian_post_opts+=" --suppress-tags copyright-without-copyright-notice"
+
+make_install_hook_post() {
+   if [ ! -d "$DESTDIR/usr/bin" ]; then
+      mkdir --parents "$DESTDIR/usr/bin"
+   fi
+   cp minerd "$DESTDIR/usr/bin/"
+}

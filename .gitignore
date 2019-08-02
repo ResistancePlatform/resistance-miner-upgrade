@@ -6,7 +6,7 @@ minerd.exe
 autom4te.cache
 .deps
 
-Makefile
+#Makefile
 Makefile.in
 INSTALL
 aclocal.m4
