@@ -12,6 +12,23 @@ export DH_VERBOSE=1
 #DPKG_EXPORT_BUILDFLAGS = 1
 #include /usr/share/dpkg/buildflags.mk
 
+# export DEB_CPPFLAGS_MAINT_STRIP = -specs=/usr/share/dpkg/no-pie-compile.specs
+# export DEB_CFLAGS_MAINT_SET = -g
+# export DEB_CPPFLAGS_MAINT_SET = -g
+# export DEB_CXXFLAGS_MAINT_SET = -g
+# export DEB_OBJCFLAGS_MAINT_SET = -g
+# export DEB_OBJCXXFLAGS_MAINT_SET = -g
+# export DEB_GCJFLAGS_MAINT_SET = -g
+# export DEB_FFLAGS_MAINT_SET = -g
+# export DEB_FCFLAGS_MAINT_SET = -g
+# export DEB_LDFLAGS_MAINT_SET = -g
+#export DEB_CFLAGS_MAINT_APPEND = -fomit-frame-pointer
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=-all qa=-bug,-canary
+export DEB_CFLAGS_MAINT_SET = -O2 -fomit-frame-pointer
+
+include /usr/share/dpkg/buildflags.mk
+
 %:
 	dh $@
 
