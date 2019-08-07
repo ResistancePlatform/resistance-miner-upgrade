@@ -38,6 +38,10 @@ override_dh_installman:
 override_dh_installchangelogs:
 	dh_installchangelogs NEWS upstream
 
+## This is required due to not using Debian default compile parameters.
+override_dh_dwz:
+	true
+
 # ## TODO: build currently is not done during package creation.
 # override_dh_autoreconf:
 # 	true
