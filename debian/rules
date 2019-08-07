@@ -18,14 +18,14 @@ override_dh_installman:
 override_dh_installchangelogs:
 	dh_installchangelogs NEWS upstream
 
-## TODO: build currently is not done during package creation.
-override_dh_autoreconf:
-	true
-
-## TODO: build currently is not done during package creation.
-override_dh_auto_configure:
-	true
-
-## TODO: build currently is not done during package creation.
-override_dh_auto_build:
-	true
+# ## TODO: build currently is not done during package creation.
+# override_dh_autoreconf:
+# 	true
+#
+# ## TODO: build currently is not done during package creation.
+# override_dh_auto_configure:
+# 	true
+#
+# ## TODO: build currently is not done during package creation.
+# override_dh_auto_build:
+# 	true
