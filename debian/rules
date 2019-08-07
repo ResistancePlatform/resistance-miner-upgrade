@@ -5,9 +5,12 @@
 
 export DH_VERBOSE=1
 
-export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-DPKG_EXPORT_BUILDFLAGS = 1
-include /usr/share/dpkg/buildflags.mk
+## Do not enable hardening compile flags per:
+## https://github.com/ResistancePlatform/resistance-miner/issues/8#issuecomment-519093678
+## https://github.com/ResistancePlatform/resistance-miner/issues/9
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+#DPKG_EXPORT_BUILDFLAGS = 1
+#include /usr/share/dpkg/buildflags.mk
 
 %:
 	dh $@
